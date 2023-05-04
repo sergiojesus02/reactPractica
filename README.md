@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Como trabajar con git
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![error al mostar imagen](https://nodd3r.com/media/blog/Portadas_blog_21.png)
 
-## Available Scripts
+que es es git? 
 
-In the project directory, you can run:
+el sistema de control de versiones moderno más utilizado del mundo. Git es un proyecto de código abierto maduro y con un mantenimiento activo de desarrolló 
 
-### `npm start`
+## Como trabajar en equipo con git?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- primero se clona el repositorio del proyecto 
+para clonarlo se usa el siguente comando
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+~~~
+git clone https://url del repositorio
+~~~
 
-### `npm test`
+- despues de clonar el repositorio hay que instalar las dependencias del proyecto usar el siguiento comando
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+~~~
+npm install
+~~~
 
-### `npm run build`
+- por lo general hay dos ramas en el repositorio la rama
+main o master y la QA
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+la arama main o master no se debe de tocar siempre trabajar en la rama QA, de la rama QA es donde se  heredaran o crearan nuestras futuras ramas, ahí es donde trabajaremos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- al clonar el repositorio en la terminal mostrara la rama main o master, hay que cambiarse a la rama QA con el siguiente comando
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+~~~
+git checkout QA
+~~~
 
-### `npm run eject`
+- para empesar a trabajar primero hay que actualizar la rama QA para actualizar una rama usamos el siguente comando
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+~~~
+git pull --rebase origin QA
+~~~
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+una vez actualizado nuestra rama creamos una para trabajar en ella
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+~~~
+git checkout -b Feature/en lo que trabajaremos
+~~~
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ejemplo: 
+~~~
+git checkout -b Feature/vistaLogin
+~~~
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- una vez terminemos de trabajar es hora de subir nuestro trabajo al remositorio remoto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+acontinuacion se muestran todos los comandos necesarios para poder hacer push al repositorio
 
-### Code Splitting
+usamos el siguente comando
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+~~~
+git add .
+~~~
 
-### Analyzing the Bundle Size
+git add . para añadir todos nuestros cambios para que podamos enviarlos al repositorio
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+~~~
+git commit -m "mensaje del commit"
+~~~
 
-### Making a Progressive Web App
+despues de añadir todos nuestros archivos se hace un commit para poder subir nuestros cambios, dentro del commit se escribe un pequeño mensaje de lo que se hizo en la rama para que nuestro equipo sepa que es lo que hicimos.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+~~~
+git pull --rebase origin QA
+~~~
 
-### Advanced Configuration
+se vuelve a hacer un pull para asegurarase de que nuestros cambios esten actualizados y no tenga ningun problema al subirse
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+~~~
+git push origin Feature/en lo que trabajamos
+~~~
 
-### Deployment
+finalmente se hace un git push para enviar nuestros cambios al rempositorio remoto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+son son todos los comandos necesarios para trabajar con git en nuestro repo local y mandarlo hacia el repo remoto
 
-### `npm run build` fails to minify
+## Quieres aprender mas sobre git?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- puedes checar el siguiente enlace para conocer mas
+
+[MAS SOBRE GIT](https://www.youtube.com/watch?v=3GymExBkKjE)
+
+![eror al mostrar la imagen](https://camo.githubusercontent.com/a433273b618d7b8c2569ba6013774adf910ae8e3da45eaff176f64781bfd53fc/68747470733a2f2f72617069646170692e636f6d2f626c6f672f77702d636f6e74656e742f75706c6f6164732f323031372f30312f6f63746f6361742e676966)
